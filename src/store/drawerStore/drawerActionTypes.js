@@ -1,0 +1,1 @@
+export const TOGGLE_LONG_DRAWER = 'TOGGLE_LONG_DRAWER';
