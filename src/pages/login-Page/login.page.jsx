@@ -44,7 +44,7 @@ const Login = () => {
                     onFinishFailed={onFinishFailed}
                 >
                     <Form.Item
-                        label="email"
+                        label="Email"
                         name="email"
                         rules={[
                             {

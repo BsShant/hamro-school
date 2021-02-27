@@ -6,7 +6,7 @@ const StudentDashboard = (props) => {
     
     return (
         <div>
-            student
+            student hi
            
         </div>
         
