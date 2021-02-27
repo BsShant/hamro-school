@@ -10,8 +10,11 @@ height:100vh;
 `;
 
 export const LoginBox=styled.div`
-width:200px;
-height:100px;
+width:300px;
+height:auto;
+border-radius:20px;
+box-shadow: 3px 3px 5px black;
+padding: 50px;
 background-color:#b6b2bd;
 
 `;

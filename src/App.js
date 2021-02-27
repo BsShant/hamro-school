@@ -1,70 +1,45 @@
-import React, { Component } from 'react';
-import AdminDashboard from './pages/admin-dashboard/admin-dashboard.pages';
-import StudentDashboard from './pages/student-dashboard/student-dashboard.pages';
-import Login from './pages/login-Page/login.page';
+import React from "react";
+import Login from "./pages/login-Page/login.page";
+import DashBoard from './dashboard/dashboard.components';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
+import "antd/dist/antd.css";
+import "./App.css";
 
-
-// export default function BasicExample() {
-//   return (
-//     <Router>
-//       <div>
-//         <Switch>
-//           <Route exact path="/">
-//           <AdminDashboard />
-//           </Route>
-//           <Route path="/about">
-//             <About />
-//           </Route>
-//           <Route path="/student">
-//           <StudentDashboard/>
-//           </Route>
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
-
-const App = (props) =>{
-  console.log(props.userType)
-    return(
-      <Router>
-        <Switch>
-        <Route exact path="/"
-        render={()=>
-        props.userType.length===0 ?
-          <Login/>
-        : 
-          <Redirect to={`/${props.userType}`}
-          />
-        
-      }
-
+const App = (props) => {
+  return (
+    <Router>
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() =>
+            props.userToken ? (
+              <DashBoard />
+            ) : (
+              <Redirect to={`/login`} />
+            )
+          }
         />
-            
-        <Route path="/student" render={()=> props.userType=='student' ? <StudentDashboard /> :
-        <Redirect to='/' />
-        
-      }/>
-        
-            
-        <Route path="/admin" render={()=> props.userType=='admin' ? <AdminDashboard /> :
-        <Redirect to='/' /> } />
-            
+        <Route
+          path="/login"
+          render={() =>
+            !props.userToken ? <Login /> : <Redirect to="/" />
+          }
+        />
       </Switch>
-      </Router>
-    )
-    
-  }
-    
-const mapStateToProps = state =>({
-  userType: state.authUser.userType
-})
+    </Router>
+  );
+};
+
+const mapStateToProps = (state) => ({
+  userToken: state.authMode.userToken,
+  user: state.authMode.authUser,
+});
+
 export default connect(mapStateToProps)(App);

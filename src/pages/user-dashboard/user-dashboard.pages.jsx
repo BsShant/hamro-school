@@ -1,14 +1,14 @@
 import React from 'react';
 import AppTheme from '../../themes/main-theme/main-theme.component';
+import { } from './user.styles';
 
-const AdminDashboard = (props) =>{
+const UserDashboard = (props) => {
+  
     return (
         <div>
-            admin
-            
+            user
+           
         </div>
-        
-        
     )
 }
-export default AppTheme(AdminDashboard);
+export default AppTheme(UserDashboard);

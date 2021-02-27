@@ -1,10 +1,15 @@
-import { toggleDrawer } from './drawerStore/drawer.reducer';
 import { authReducer } from './authStore/auth.reducer';
 import { combineReducers } from 'redux';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
 
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: 'authMode'
+}
 const rootReducer = combineReducers({
-    drawer: toggleDrawer,
-    authUser: authReducer
+    authMode: authReducer,
 })
 
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);
