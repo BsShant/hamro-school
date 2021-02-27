@@ -1,7 +1,7 @@
 import React from 'react';
 import { LoginBox, LoginWrapper } from './login.styles';
 import { useDispatch } from 'react-redux';
-import { authProcessStarts} from '../../store/authStore/auth.action';
+import { authProcessStarts } from '../../store/authStore/auth.action';
 import 'antd/dist/antd.css';
 import { Form, Input, Button, Checkbox } from 'antd';
 const Login = () => {
@@ -21,16 +21,16 @@ const Login = () => {
             span: 16,
         },
     };
-    
-    
+
+
     const onFinish = (values) => {
         dispatch(authProcessStarts(values));
     };
-    
+
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    
+
     return (
         <LoginWrapper>
             <LoginBox>
