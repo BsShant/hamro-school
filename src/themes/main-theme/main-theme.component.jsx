@@ -33,10 +33,12 @@ const AppTheme = (PassedComponent, ...props) => {
         const enterLoading = () => {
             toggleloading(true)
             dispatch(logoutProcessStarts())
-            if (!error && !logoutSpinner) {
-                toggleloading(false)
-                history.push('/login')
-            }
+
+                if (!error && !logoutSpinner) {
+                    history.push('/login')
+                    toggleloading(false)
+
+                }
 
         }
         return (

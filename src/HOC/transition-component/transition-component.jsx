@@ -2,11 +2,10 @@ import React from 'react';
 import { SpinnerContainer, SpinnerDiv } from './transition-styles';
 import { connect } from "react-redux";
 
-
 const TransitionComponent = (PassedComponent) => {
     const Spinner = (props) => {
-        
-        const spinnerItem = <SpinnerContainer>
+
+      const spinnerItem = <SpinnerContainer>
             <SpinnerDiv></SpinnerDiv>
         </SpinnerContainer>
         return (

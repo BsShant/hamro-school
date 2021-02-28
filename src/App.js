@@ -12,7 +12,6 @@ import "antd/dist/antd.css";
 import "./App.css";
 import TransitionComponent from './HOC/transition-component/transition-component';
 
-
 const App = (props) => {
   return (
     <Router>
