@@ -10,6 +10,8 @@ import {
 import { connect } from "react-redux";
 import "antd/dist/antd.css";
 import "./App.css";
+import TransitionComponent from './HOC/transition-component/transition-component';
+
 
 const App = (props) => {
   return (
@@ -42,4 +44,4 @@ const mapStateToProps = (state) => ({
   user: state.authMode.authUser,
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(TransitionComponent(App));
