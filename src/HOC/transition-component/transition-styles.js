@@ -6,6 +6,7 @@ justify-content: center;
 align-items:center;
 height: 100vh;
 width: 100%;
+background-color:#004537;
 `;
 export const SpinnerDiv = styled.div`
 @keyframes example {
@@ -13,13 +14,13 @@ export const SpinnerDiv = styled.div`
     to {transform: rotate(360deg);}
   }
 animation-name: example;
-animation-duration: 2s;
+animation-duration: 1s;
 animation-iteration-count: infinite;
 animation-direction: alternate;
-background-color: white;
+background-color: inherit;
 width: 300px;
 height: 300px;
-border: 20px solid grey;
-border-width: 0 0px 20px 20px;
+border: solid white;
+border-width: 0 0 20px 20px;
 border-radius: 50%;
 `;
