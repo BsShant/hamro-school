@@ -19,7 +19,7 @@ import { useDispatch } from 'react-redux';
 
 const AppTheme = (PassedComponent, ...props) => {
     const Sticky = (props) => {
-        const { error } = props;
+        const { error, logoutSpinner } = props;
         let history = useHistory();
         const dispatch = useDispatch()
         const { Header, Sider, Content } = Layout;
@@ -33,12 +33,10 @@ const AppTheme = (PassedComponent, ...props) => {
         const enterLoading = () => {
             toggleloading(true)
             dispatch(logoutProcessStarts())
-            setTimeout(() => {
-                if (!error) {
-                    history.push('/login')
-                }
-                return toggleloading(false)
-            }, 6000);
+            if (!error && !logoutSpinner) {
+                toggleloading(false)
+                history.push('/login')
+            }
 
         }
         return (
@@ -90,7 +88,8 @@ const AppTheme = (PassedComponent, ...props) => {
     }
     const mapStateToProps = state => ({
         user: state.authMode.authUser,
-        error: state.authMode.error
+        error: state.authMode.error,
+        logoutSpinner: state.authMode.logoutSpinner
 
     })
     return connect(mapStateToProps)(Sticky);

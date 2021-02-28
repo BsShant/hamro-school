@@ -14,7 +14,6 @@ const TransitionComponent = (PassedComponent) => {
                 {
                     props.authSpinner ? spinnerItem : <PassedComponent {...props} />
                 }
-                <div onClick={enterLoading}>logout</div>
             </div>
         )
     }
