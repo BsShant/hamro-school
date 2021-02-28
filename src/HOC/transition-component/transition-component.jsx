@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 
 const TransitionComponent = (PassedComponent) => {
     const Spinner = (props) => {
-        const spinnerItem = <SpinnerContainer>
+
+      const spinnerItem = <SpinnerContainer>
             <SpinnerDiv></SpinnerDiv>
         </SpinnerContainer>
         return (

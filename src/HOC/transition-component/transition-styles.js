@@ -5,6 +5,7 @@ display: flex;
 justify-content: center;
 align-items:center;
 height: 100vh;
+background-color: #004537;
 width: 100%;
 background-color:#004537;
 `;

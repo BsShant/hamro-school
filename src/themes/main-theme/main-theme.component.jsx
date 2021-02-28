@@ -39,7 +39,6 @@ const AppTheme = (PassedComponent, ...props) => {
                     toggleloading(false)
 
                 }
-          
 
         }
         return (

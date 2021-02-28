@@ -6,10 +6,10 @@ import StudentDashboard from "../pages/student-dashboard/student-dashboard.pages
 import UserDashboard from "../pages/user-dashboard/user-dashboard.pages";
 
 const DashBoard = (props) => {
-    let renderDashboard ;
+    let renderDashboard;
     const { user } = props;
-    
-    if(user){
+
+    if (user) {
         if (user.role === 'student') {
             renderDashboard = <StudentDashboard />
         } else if (user.role === 'admin') {
@@ -17,14 +17,14 @@ const DashBoard = (props) => {
         } else if (user.role === 'user') {
             renderDashboard = <UserDashboard />
         }
-    }    
+    }
     return (
-<div>
-        {
-            renderDashboard
-        }
-</div>
-        
+        <div>
+            {
+                renderDashboard
+            }
+        </div>
+
     );
 };
 
