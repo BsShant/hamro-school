@@ -4,7 +4,6 @@ import "antd/dist/antd.css";
 import AdminDashboard from "../pages/admin-dashboard/admin-dashboard.pages";
 import StudentDashboard from "../pages/student-dashboard/student-dashboard.pages";
 import UserDashboard from "../pages/user-dashboard/user-dashboard.pages";
-import TransitionComponent from '../HOC/transition-component/transition-component';
 
 const DashBoard = (props) => {
     let renderDashboard ;
@@ -34,4 +33,4 @@ const mapStateToProps = (state) => ({
     user: state.authMode.authUser,
 });
 
-export default connect(mapStateToProps)(TransitionComponent(DashBoard));
+export default connect(mapStateToProps)(DashBoard);
